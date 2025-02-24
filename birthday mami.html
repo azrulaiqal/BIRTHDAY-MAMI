@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday MIL</title>
+    <style>
+        body {
+            background-color: navy;
+            color: white;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            margin: 20px;
+        }
+        .title {
+            font-size: 36px;
+            margin: 20px 0;
+        }
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Adds space between images */
+            margin: 20px 0;
+            flex-wrap: wrap; /* Allows images to wrap on smaller screens */
+        }
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .image-row img {
+            width: 300px; /* Fixed width for images */
+            height: 300px; /* Fixed height for images */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+            object-fit: cover; /* Ensures images maintain aspect ratio */
+        }
+        .image-row img:hover {
+            transform: scale(1.05);
+        }
+        .caption {
+            margin: 10px 0;
+            font-size: 18px;
+            text-align: center;
+        }
+        .btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 40px 0; /* Increased margin to move the button lower */
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 20%; /* Adjusted to appear above the button */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ADD8E6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: float 2s infinite;
+            color: black; /* Text color changed to black */
+            z-index: 1000; /* Ensure popup appears above other content */
+            width: 80%; /* Adjusted width for better readability */
+            max-width: 400px; /* Limit maximum width */
+        }
+        @keyframes float {
+            0% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+            100% { transform: translateX(-50%) translateY(0); }
+        }
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 28px; /* Smaller font size for mobile */
+            }
+            .image-row {
+                flex-direction: column; /* Stack images vertically on mobile */
+                align-items: center;
+                gap: 20px; /* Add more space between stacked images */
+            }
+            .image-row img {
+                width: 250px; /* Slightly smaller images for mobile */
+                height: 250px; /* Slightly smaller images for mobile */
+            }
+            .btn {
+                width: 100%; /* Full-width button for mobile */
+                padding: 12px 24px; /* Slightly smaller padding */
+                margin: 30px 0; /* Adjusted margin for mobile */
+            }
+            .popup {
+                width: 90%; /* Smaller popup for mobile */
+                padding: 15px;
+                top: 15%; /* Adjusted for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Happy Birthday, MAMIIIII IKHLAS DARI AZRUL DAN IRAAAAA!!!!!!!!!</div>
+        <div class="image-row">
+            <div class="image-container">
+                <img src="mami 1.jpg" alt="Image 1">
+                <div class="caption">HAPPY BIRTHDAY</div>
+            </div>
+            <div class="image-container">
+                <img src="mami 3.jpg" alt="Image 2">
+                <div class="caption">MAMI TERSAYANGGGGGG</div>
+            </div>
+        </div>
+        <button class="btn" onclick="showPopup()">Click Me!</button>
+    </div>
+    <div class="popup" id="popup">
+        <button class="popup-close" onclick="closePopup()">X</button>
+        <p>HAPPY BIRTHDAY MAMIIII SEMOGA DIMURAHKAN REZEKI DAN DIPANJANGKAN UMURRR. TERIMA KASIH DAH JAGA IRA DARI KECIL SAMPAI KE BESAR DENGAN PENUH KESABARAN WALAUPUN IRA NI SANGATLAH MENCABAR UNTUK DIJAGA TAPI MAMI SANGAT SABAR MENJAGA DIAAA. SEMOGA MAMI SIHAT SELALU DAN CANTIK SELALUUU. NANTI HADIAH AZRUL BAGI YEEE UNTUK SEKARANG AZRUL WISH BAGI NI JEE DULUUU. ENJOY THE DAY MAMIII HAPPY BIRTHDAY MAMIKU TERSAYANGGGG</p>
+    </div>
+    <audio id="bg-music">
+        <source src="BIRTHDAY.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        function showPopup() {
+            var popup = document.getElementById('popup');
+            var music = document.getElementById('bg-music');
+            popup.style.display = 'block';
+            music.play();
+        }
+        function closePopup() {
+            var popup = document.getElementById('popup');
+            var music = document.getElementById('bg-music');
+            popup.style.display = 'none';
+            music.pause();
+        }
+    </script>
+</body>
+</html>
